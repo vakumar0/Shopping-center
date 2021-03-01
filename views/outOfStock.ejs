@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link href= "/style.css" rel="stylesheet" type="text/css" />
+        <script src="https://kit.fontawesome.com/b7dce091ed.js" crossorigin="anonymous"></script>
+    </head>
+
+    <div>
+        <div id="header">
+            <div id="headerTitle">
+                <h1 id="headerTitle_name" onclick="loadHomePage()">SHOPPING CENTER</h1>            
+            </div>
+            <div id="searchBar">                
+                <input type="text" placeholder="search..." name="productName" class="form-control">
+                <button onclick="searchText(this)" class="btn btn-primary">Search</button>                             
+            </div>
+            <div>
+                <p>Admin</p>
+            </div>
+            <div id="headerCart" class="margin">
+                <h2 id="headerCart_name" onclick="getCartItems()" style="cursor: pointer"><i class="fas fa-shopping-cart"></i></h2>
+            </div>
+            <div style="clear:both;"></div>
+        </div>     
+        
+        <div id="contentBody">    
+            <p>Transaction cannot be processed, as we are out of stock. If more than one quantity is selected, try having only one quantity of your item</p>
+        </div>              
+        <div id="footer">
+            
+        </div>   
+    </div>
+
+    <script>        
+        function loadHomePage() {
+            window.location.href = window.location.origin
+        }
+       
+        function searchText(event) {
+            let search = event.parentElement.children[0].value;
+            window.location.href = window.location.origin + '/products/search/' + search;            
+        }   
+        
+        function getCartItems() {
+            window.location.href = window.location.origin + '/orders'            
+        }
+    </script>
+</html>

@@ -1,0 +1,187 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#header {
+  background-color: #456268;
+  color: #fff;
+  padding: 20px;
+  display: inline-block;
+  width: 100%;
+}
+
+#header div {
+  display: inline-flex;
+}
+
+#headerTitle {
+  padding: 0 20px;
+}
+
+#searchBar {  
+  padding: 0 100px;
+  width: 50%;
+}
+
+#searchBar input {
+  width: 100%;
+  height: 35px;
+}
+
+#headerTitle_name {
+  cursor: pointer;
+}
+
+#categories {
+  text-align: center;
+}
+
+#categories ul {
+  list-style: none;
+  display: inline;  
+}
+
+#categories ul li {
+  padding: .5% 3%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#categories ul li:hover {
+  background-color: #d0e8f2;
+}
+
+/* #dashboardProducts {
+  text-align: center;
+} */
+
+/* #dashboardProducts_top5{
+  margin: 3%;
+} */
+#dashboardProducts_top5 ul {
+  list-style: none;
+  display: inline-block;  
+  width: 100%;
+  text-align: center;
+}
+
+#top5Heading{
+  text-align: left;
+}
+
+#dashboardProducts_top5 ul li {
+  padding: 1% 3%;
+  display: inline-block;
+  background-color: #d0e8f2;
+  color: #456268;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+
+#dashboardProducts_top5 ul li p, #dashboardProducts_top5 ul li div, #dashboardProducts_top5 ul li p{
+  text-align: center;
+}
+
+#dashboardProducts ul li:hover {
+  color: rgb(18 171 51);
+  box-shadow: 3px 3px 7px 0px #b3aeae;
+}
+
+#dashboardProducts_top5_discount {
+  display: inline;
+}
+
+#dashboardProducts_top5_discount p{
+  display: inline;
+}
+
+#productCategory {
+  text-align: center;  
+  padding: 1% 3%;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#productCategory:hover {
+  background-color: #d0e8f2;
+}
+
+#sortBy { 
+  padding: 1% 3%;
+  cursor: pointer;
+}
+
+#sortBy p{
+  display: inline-flex;
+  padding: 0% 2%;
+}
+
+#sortBy p:hover{
+  background-color: #d0e8f2;
+}
+
+#completeProductDetail {
+  margin: auto;
+  width: 50%;
+  top: 10%;
+}
+
+#completeProductDetail label{
+  background-color: #d0e8f2;
+    font-size: 1.5em;
+    width: 200px;
+    text-align: center;
+}
+
+#completeProductDetail span{
+  font-size: 1.5em;
+  padding: 0 5%;
+}
+
+
+#completeProductDetail div {
+  margin-top: 20px;
+}
+
+.margin {
+  margin-left: 10px;
+}
+
+.margin:hover {
+  color: #fff939;
+}
+
+#star{
+  color:#a59c5c;
+}
+
+#cartProducts ul {
+  list-style: none;
+  display: inline;  
+  text-align: center;  
+}
+
+#cartProducts ul li {
+  padding: .5% 3%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#cartProducts ul li:hover {
+  background-color: #d0e8f2;
+}

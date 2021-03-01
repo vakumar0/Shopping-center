@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link href= "/style.css" rel="stylesheet" type="text/css" />
+        <script src="https://kit.fontawesome.com/b7dce091ed.js" crossorigin="anonymous"></script>
+    </head>
+
+    <div>
+        <div id="header">
+            <div id="headerTitle">
+                <h1 id="headerTitle_name" onclick="loadHomePage()">SHOPPING CENTER</h1>            
+            </div>
+            <div id="searchBar">                
+                <input type="text" placeholder="search..." name="productName" class="form-control">
+                <button onclick="searchText(this)" class="btn btn-primary">Search</button>                             
+            </div>
+            <div>
+                <p>Admin</p>
+            </div>
+            <div id="headerCart" class="margin">
+                <h2 id="headerCart_name" onclick="getCartItems()" style="cursor: pointer"><i class="fas fa-shopping-cart"></i></h2>
+            </div>
+            <div style="clear:both;"></div>
+        </div>     
+        
+        <div id="contentBody">    
+            <div id="completeProductDetail">
+                <form method="POST" action="/orders">  
+                    <% productInfo.forEach(function(product, i) { %>  
+                        <div>
+                            <p>Name</p>
+                            <label name="product_name" for="product_name"><%= product.product_name %></label>
+                        </div>       
+                        <div>
+                            <P>Price</P>
+                            <label name="price" for="price"><%= product.price %></label>                        
+                        </div>                                     
+                        <div>
+                            <p>Discount</p>
+                            <label name="discount" for="discount"><%= product.discount %></label>
+                        </div>                        
+                        <div>
+                            <p>Rating</p>
+                            <label name="rating" for="rating" style="background-color: transparent;"><i class="fas fa-star" id="star"></i><i class="fas fa-star" id="star"></i><i class="fas fa-star" id="star"></i><i class="fas fa-star" id="star"></i></label>    
+                        </div>                        
+                        <div>
+                            <p>Model</p>
+                            <label name="model" for="model"><%= product.model_name %></label>
+                        </div>  
+                        <div>
+                            <p>Seller</p>
+                            <label name="seller" for="seller"><%= product.seller %></label>
+                        </div>  
+                        <div>
+                            <p>Stock Available</p>
+                            <label name="stock_available" for="stock_available"><%= product.stock_availability %></label>
+                        </div>                        
+                        
+                        <input type="hidden" name="discount" value=<%= product.discount %>>
+                        <input type="hidden" name="price" value=<%= product.price %>>
+                        <input type="hidden" name="product_name" value=<%= product.product_name %>>                        
+                        <input type="hidden" name="product_id" value=<%= product.product_id %>>
+                        <input type="hidden" name="category_id" value=<%= product.category_id %>>
+                        <input type="hidden" name="user_id" value="admin">
+                        <input type="hidden" name="rating" value=<%= product.rating %>>
+                                                
+                        <button class="btn btn-primary" type="submit" style="margin-top: 10px">Add To Cart</button>                                                        
+                    <% }); %>      
+                </form>                
+            </div>
+        </div>              
+        <div id="footer">
+            
+        </div>   
+    </div>
+
+    <script>        
+        function loadHomePage() {
+            window.location.href = window.location.origin
+        }
+       
+        function searchText(event) {
+            let search = event.parentElement.children[0].value;
+            window.location.href = window.location.origin + '/products/search/' + search;            
+        }   
+        
+        function getCartItems() {
+            window.location.href = window.location.origin + '/orders'            
+        }
+    </script>
+</html>
