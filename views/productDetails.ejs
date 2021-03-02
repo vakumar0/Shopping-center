@@ -12,20 +12,24 @@
 
     <div>
         <div id="header">
-            <div id="headerTitle">
-                <h1 id="headerTitle_name" onclick="loadHomePage()">SHOPPING CENTER</h1>            
-            </div>
-            <div id="searchBar">                
+            <div id="headerTop">
+                <div id="headerTitle" style="float:left">
+                    <h1 id="headerTitle_name" onclick="loadHomePage()">SHOPPING CENTER</h1>            
+                </div>
+                <div class="adminCartSection">
+                    <div>
+                        <h2>Admin</h2>
+                    </div>
+                    <div id="headerCart" class="margin">
+                        <h2 id="headerCart_name" onclick="getCartItems()" style="cursor: pointer"><i class="fas fa-shopping-cart"></i></h2>
+                    </div>
+                </div>     
+                <div style="clear:both;"></div>           
+            </div>            
+            <div id="searchBar">
                 <input type="text" placeholder="search..." name="productName" class="form-control">
-                <button onclick="searchText(this)" class="btn btn-primary">Search</button>                             
-            </div>
-            <div>
-                <p>Admin</p>
-            </div>
-            <div id="headerCart" class="margin">
-                <h2 id="headerCart_name" onclick="getCartItems()" style="cursor: pointer"><i class="fas fa-shopping-cart"></i></h2>
-            </div>
-            <div style="clear:both;"></div>
+                <button onclick="searchText(this)" class="btn btn-primary">Search</button>     
+            </div>                   
         </div>     
         
         <div id="contentBody">    

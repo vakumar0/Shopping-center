@@ -23,9 +23,9 @@ a {
   width: 100%;
 }
 
-#header div {
+/* #header div {
   display: inline-flex;
-}
+} */
 
 #headerTitle {
   padding: 0 20px;
@@ -33,10 +33,11 @@ a {
 
 #searchBar {  
   padding: 0 100px;
-  width: 50%;
+  display: inline-flex;
+  width: 100%;
 }
 
-#searchBar input {
+#searchBar input[type=text] {
   width: 100%;
   height: 35px;
 }
@@ -184,4 +185,19 @@ a {
 
 #cartProducts ul li:hover {
   background-color: #d0e8f2;
+}
+
+@media (max-width: 480px) {
+  #header{
+    background-color: red;
+  }  
+}
+
+.adminCartSection {
+  float: right;
+  text-align: right;
+}
+
+.adminCartSection div{
+  display: inline-block;
 }
