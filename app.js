@@ -10,9 +10,6 @@ var session = require('express-session');
 var app = express();
 app.get('/favicon.ico', (req, res) => res.status(204));
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
 
 //Import routes
 var productRoutes = require('./api/routes/products');
