@@ -8,6 +8,7 @@ var expressLayouts = require('express-ejs-layouts');
 var session = require('express-session');
 
 var app = express();
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 //Import routes
 var productRoutes = require('./api/routes/products');
@@ -34,8 +35,6 @@ app.use(expressLayouts);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.use(function(req, res, next) {
   next(createError(404));
